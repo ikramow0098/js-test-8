@@ -34,3 +34,23 @@ const calculateDiscount = function(price, discountRate) {
 // Test cases
 calculateDiscount(100, 0.2); // Expected: Final Price: $80.00
 calculateDiscount(250, 0.15); // Expected: Final Price: $212.50
+
+//Task 3: Service Fee Calculation
+
+/*
+An arrow function calculateServiceFee:
+Accepts amount and serviceType.
+Charges 15% for Premium, 10% for Standard, 5% for Basic.
+*/
+
+// Task 3: Service Fee Calculation
+const calculateServiceFee = (amount, serviceType) => {
+  let feeRate = serviceType === "Premium" ? 0.15 :
+                serviceType === "Standard" ? 0.10 : 0.05;
+  let fee = amount * feeRate;
+  console.log(`Service Fee: $${fee.toFixed(2)}`);
+};
+
+// Test cases
+calculateServiceFee(200, "Premium"); // Expected: Service Fee: $30.00
+calculateServiceFee(500, "Standard"); // Expected: Service Fee: $50.00
