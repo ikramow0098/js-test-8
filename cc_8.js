@@ -108,4 +108,26 @@ const filterLargeTransactions = (transactions, filterFunction) => transactions.f
 console.log(filterLargeTransactions(transactions, amount => amount > 1000)); 
 // Output: [1500, 3200, 2500]
 
+//Task 7: Shopping Cart Tracker (Closures)
+
+/*
+We are creating a function that tracks the running total of a shopping cart.
+
+We use closures to store the total cost inside an inner function.
+Each time the inner function is called, the total increases.
+*/
+
+function createCartTracker() {
+  let total = 0;
+  return function(amount) {
+      total += amount;
+      return `Total Cart Value: $${total}`;
+  };
+}
+
+// Test Cases
+let cart = createCartTracker();
+console.log(cart(20)); // "Total Cart Value: $20"
+console.log(cart(35)); // "Total Cart Value: $55"
+
 
