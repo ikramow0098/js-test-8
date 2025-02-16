@@ -91,3 +91,21 @@ function calculateLoanPayment(principal, rate, time) {
 // Test cases
 calculateLoanPayment(1000, 0.05, 2); // Expected: Total Payment: $1100.00
 calculateLoanPayment(5000, 0.07, 3); // Expected: Total Payment: $6050.00
+
+//Task 6: Identifying Large Transactions (Higher-Order Functions)
+
+/*
+We are filtering out transactions above $1000 using a higher-order function.
+We store an array of transactions.
+We use the filter() function to get transactions greater than $1000.
+*/
+
+let transactions = [200, 1500, 3200, 800, 2500];
+
+const filterLargeTransactions = (transactions, filterFunction) => transactions.filter(filterFunction);
+
+// Test Case
+console.log(filterLargeTransactions(transactions, amount => amount > 1000)); 
+// Output: [1500, 3200, 2500]
+
+
